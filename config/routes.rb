@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :customers do
         [:create, :show, :update, :destroy]
+
+        resources :subscriptions, only: [:create, :index, :update]
       end
     end
   end
